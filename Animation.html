@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+</head>
+<body>
+    <img name="Diapo" width="500" height="300">
+    <script>
+        var images = [];
+        images[0] ="./assets/img/img1.png";
+        images[1] ="./assets/img/img2.png";
+        images[2] ="./assets/img/img3.png";
+        images[3] ="./assets/img/img4.png";
+        var i = 0;
+        var timer = 3000;
+        var effet = 1;
+        function changerimage(){
+            document.Diapo.src = images[i];
+            if(i < images.length - 1){
+                i++;
+            }else{
+                i = 0;
+            }
+            setTimeout("changerimage()", timer);
+            effet.style.transition = 1;
+        }
+    window.onload=changerimage;
+    </script>
+</body>
+</html>
